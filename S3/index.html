@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/styles.css">
+        <title>Bogo's Word Scramble</title>
+    </head>
+
+    <body>
+        <h1>Bogo's Word Scramble!</h1>
+        <div id="board">
+            
+        </div>
+
+        <input type="text" class="guessInput" id="guessInput" />
+        <button type="button" class="guessButton" id="guessButton">Guess</button>
+        <h2 id="errorMsg"></h2>
+        <button type="button" class="guessButton" id="newGameButton" style="display:none; color: yellow">New Game</button>
+        <div id="stats">
+            <p>Statistics<p>
+            <p>Games Played: <span id="gamesPlayed">0</span></p>
+            <p>Wins: <span id="wins">0</span></p>
+            <p>Win Percentage: <span id="winPct">0%</span></p>
+            <p>Current Streak: <span id="currentStreak">0</span></p>
+        </div>
+        <script src="./wordle.js"></script>
+    </body>
+</html>

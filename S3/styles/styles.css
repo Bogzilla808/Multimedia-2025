@@ -1,0 +1,138 @@
+/* Reset & body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3e350d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#stats {
+    display: inline-flex;
+    justify-content: space-between; /* space items evenly */
+    gap: 20px; /* space between each stat item */
+    background-color: #222; /* dark background for contrast */
+    padding: 10px 20px; /* some padding around the stats */
+    border-radius: 10px; /* rounded corners */
+    color: whitesmoke; /* text color */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* subtle shadow */
+    margin-top: 20px;
+}
+
+h1 {
+    color: whitesmoke;
+
+    padding-bottom: 20px;
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.4),   /* soft depth shadow */
+        0 4px 8px rgba(0, 0, 0, 0.2);   /* subtle secondary blur */
+    text-align: center;
+}
+
+/* Board styling */
+#board {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    margin-bottom: 20px; /* spacing between board and input */
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ccc;
+    font-size: 24px;
+    line-height: 45px;
+    background: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+
+    display: flex;
+    align-items: center;      /* vertical center */
+    justify-content: center;  /* horizontal center */
+
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.8);
+    perspective: 800px;
+}
+
+.green { background-color: #6aaa64; color: white; }
+.yellow { background-color: #c9b458; color: white; }
+.red { background-color: #b5191e; color: white; }
+
+/* Flip animation keyframes */
+@keyframes flip {
+    0%   { transform: rotateX(0deg); }
+    50%  { transform: rotateX(90deg); }
+    100% { transform: rotateX(0deg); }
+}
+
+.cell.flip {
+    animation: flip 0.6s ease;
+}
+
+/* Input & button container */
+#controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Input field styling */
+.guessInput {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    width: 150px;
+
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Button styling */
+.guessButton {
+    margin-top: 15px;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    background-color: #6aaa64;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+}
+
+.guessButton:hover {
+    background-color: #519251;
+}
+
+/* Error message */
+#errorMsg {
+    color: rgb(255, 0, 0, 100);
+    padding-top: 8px;
+    min-height: 18px; /* reserve space so page doesn't shift */
+    font-weight: 800;
+}
+
+.vanish {
+    display: none;
+}
+
+.green  { background-color: #6aaa64; color: white; border-color: #6aaa64; }
+.yellow { background-color: #c9b458; color: white; border-color: #c9b458; }
+.red    { background-color: #b5191e; color: white; border-color: #b5191e; }
