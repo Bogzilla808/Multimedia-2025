@@ -1,0 +1,124 @@
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --chart-bg: #FA8072; /* salmon-orange */
+    --btn-bg: white;
+    --btn-text: black;
+    --btn-border: black;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+#chartCanvas {
+    border: 1px solid black;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* soft shadow */
+    border-radius: 10px; /* optional rounded corners */
+}
+#toggleButton {
+    display: block;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 18px;
+
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#toggleButton:hover {
+    background-color: black;
+    color: white;
+}
+
+#toggleButton:active {
+    background-color: gray;
+    color: white;
+}
+
+#chartWrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* space between chart and controls */
+}
+
+#controls {
+    display: flex;
+    background-color: var(--chart-bg); /* Salmon-orange */
+    color: var(--text-color);
+    border-radius: 15px;       /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    padding: 20px;             /* Some inner spacing */
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: block;
+    padding: 10px 15px;
+    font-size: 18px;
+    margin: 3px;
+
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.btn:active {
+    background-color: gray;
+    color: white;
+}
+
+#pageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* center everything horizontally */
+    gap: 20px;
+}
+
+.btn, #toggleButton {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 2px solid var(--btn-border);
+}
+
+#themeSwitchWrapper {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.chartBtnContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chartBtnContainer .btn {
+    flex: 1 1 45%;
+}
